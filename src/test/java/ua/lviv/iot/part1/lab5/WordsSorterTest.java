@@ -3,7 +3,6 @@ package ua.lviv.iot.part1.lab5;
 import org.junit.jupiter.api.Test;
 import static org.junit.Assert.assertEquals;
 
-
 class WordsSorterTest {
     WordsSorter sorter = new WordsSorter();
 
