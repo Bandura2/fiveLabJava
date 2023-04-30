@@ -10,13 +10,13 @@ import java.util.regex.Pattern;
 public class WordsSorter {
 
     public String sorterWords(final String stringThatSorting,
-                              final String neededLetter) {
+                              final char neededLetter) {
 
         List<String> result = new LinkedList<>();
         Map<Integer, List<String>> mapOfWords = new HashMap<>();
 
         Pattern patternForSplit = Pattern.compile("\\s+");
-        Pattern pattern = Pattern.compile(neededLetter);
+        Pattern pattern = Pattern.compile(String.valueOf(neededLetter));
 
         String[] words = patternForSplit.split(stringThatSorting);
 
@@ -35,7 +35,6 @@ public class WordsSorter {
                 mapOfWords.get(countOfLetterInWord).add(word);
             } else {
                 mapOfWords.get(countOfLetterInWord).add(word);
-
             }
         }
 
@@ -45,15 +44,5 @@ public class WordsSorter {
         }
 
         return result.toString();
-    }
-
-    public static void main(String[] args) {
-
-        String a = "a f re j gb ki bh jhf cd oiu";
-        String b = "d";
-
-        var sorter = new WordsSorter();
-
-        System.out.println(sorter.sorterWords(a, b));
     }
 }
