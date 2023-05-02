@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class WordsSorter {
+public final class WordsSorter {
 
     public String sorterWords(final String stringThatSorting,
                               final char neededLetter) {
@@ -44,5 +44,18 @@ public class WordsSorter {
         }
 
         return result.toString();
+    }
+
+    public static void main(final String[] args) {
+
+        char[] arrayLetters = args[1].toCharArray();
+
+        if (arrayLetters.length > 1) {
+            System.out.println("String have more than 1 letter");
+            return;
+        }
+
+        WordsSorter sorter = new WordsSorter();
+        System.out.println(sorter.sorterWords(args[0], arrayLetters[0]));
     }
 }
